@@ -1,1 +1,13 @@
-
+Para generar un par de claves (pública/privada) para el grupo:
+  gpg --gen-key
+  1     // RSA and RSA (default)
+  2048  // largo de la clave
+  5m    // vence en 5 meses, 22 de agosto
+  y     // confirmación
+  
+Para -cCifrar el archivo paracifrar.txt utilizando la clave pública de los docentes:
+  gpg --import fsi-pub.asc
+  gpg --compress-algo none --output paracifrar.gpg --encrypt --recipient fsi@fing.edu.uy
+  
+Exportar la clave pública:
+  gpg --export --output fsi20-pub.asc marco.centurion@fing.edu.uy
