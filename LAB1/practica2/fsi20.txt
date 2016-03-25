@@ -1,3 +1,5 @@
+GPG
+
 Generar un par de claves (pública/privada) para el grupo:
   gpg --gen-key
   1     // RSA and RSA (default)
@@ -19,3 +21,20 @@ Firmar y exportar la clave pública de los docentes y asignarle un nivel de conf
   gpg --armor --export fsi@fing.edu.uy --output fsi-pub-signed.asc  // exportamos al archivo pedido
   
   
+//**********************************************//
+
+openSSL  
+
+Generar un par de claves RSA (pública/privada) para el grupo:
+  openssl genrsa -out key.pem 2048
+  openssl rsa -in key.pem -pubout -out fsi20-pub.pem // exportamos la clave pública
+  
+Generar un Certificate Signing Request (CSR):
+  openssl req -new -key key.pem -out fsi20.csr
+  UY
+  Montevideo
+  Montevideo
+  FIng
+  InCo
+  fsi20
+  marco.centurion@fing.edu.uy
