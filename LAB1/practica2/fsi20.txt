@@ -1,0 +1,40 @@
+GPG
+
+Generar un par de claves (pública/privada) para el grupo:
+  gpg --gen-key
+  1     // RSA and RSA (default)
+  2048  // largo de la clave
+  5m    // vence en 5 meses, 22 de agosto
+  y     // confirmación
+  
+Cifrar el archivo paracifrar.txt utilizando la clave pública de los docentes:
+  gpg --import fsi-pub.asc
+  gpg --compress-algo none --output paracifrar.gpg --encrypt --recipient fsi@fing.edu.uy
+  
+Exportar la clave pública del grupo generada:
+  gpg --armor --export marco.centurion@fing.edu.uy --output fsi20-pub.asc 
+  
+Firmar y exportar la clave pública de los docentes y asignarle un nivel de confianza adecuado para la situación:
+  gpg --edit-key fsi@fing.edu.uy
+  trust
+  3   // el dueño entiende las implicaciones de firmar claves y las valida apropiadamente antes de firmarlas
+  gpg --armor --export fsi@fing.edu.uy --output fsi-pub-signed.asc  // exportamos al archivo pedido
+  
+  
+//**********************************************//
+
+openSSL  
+
+Generar un par de claves RSA (pública/privada) para el grupo:
+  openssl genrsa -out key.pem 2048
+  openssl rsa -in key.pem -pubout -out fsi20-pub.pem // exportamos la clave pública
+  
+Generar un Certificate Signing Request (CSR):
+  openssl req -new -key key.pem -out fsi20.csr
+  UY
+  Montevideo
+  Montevideo
+  FIng
+  InCo
+  fsi20
+  marco.centurion@fing.edu.uy
