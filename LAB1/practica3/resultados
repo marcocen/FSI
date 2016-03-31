@@ -1,0 +1,15 @@
+Primero ejecutamos los siguientes dos comandos, obteniendo el mismo resultado ():
+  md5sum carta.ps
+  md5sum hack.ps
+  
+Luego probamos con SHA-1 de la siguiente manera:
+  sha1sum carta.ps -- devolviendo 
+  sha1sum hack.ps -- devolviendo
+Como se puede ver, se obtuvieron resultados distintos.
+
+Utilizando un visor de postscript, se ve que contienen textos distintos entre sí.
+
+Utilizando un editor de texto, se ven leves diferencias en los carácteres raros pertenecientes al cabezal. 
+El texto de la carta en sí parece igual.
+
+Utilizando la utilidad diff, (diff carta.ps hack.ps) obtenemos como resultado "Binary files carta.ps and hack.ps difer".
