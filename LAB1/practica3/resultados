@@ -1,10 +1,10 @@
-Primero ejecutamos los siguientes dos comandos, obteniendo el mismo resultado ():
+Primero ejecutamos los siguientes dos comandos, obteniendo el mismo resultado (A25F7F0B29EE0B3968C860738533A4B9):
   md5sum carta.ps
   md5sum hack.ps
-  
+
 Luego probamos con SHA-1 de la siguiente manera:
-  sha1sum carta.ps -- devolviendo 
-  sha1sum hack.ps -- devolviendo
+  sha1sum carta.ps -- devolviendo 07835FDD04C9AFD283046BD30A362A6516B7E216
+  sha1sum hack.ps -- devolviendo 3548DB4D0AF8FD2F1DBE02288575E8F9F539BFA6
 Como se puede ver, se obtuvieron resultados distintos.
 
 Utilizando un visor de postscript, se ve que contienen textos distintos entre sí.
