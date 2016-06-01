@@ -1,0 +1,1 @@
+Dentro del servidor web, el backdoor fue instalado en el directorio /usr/local/awstats/wwwroot/cgi-bin. El archivo se llama conexion.pl. Se ubicó aquí porque es el directorio que está configurado para ejecutar scripts cgi.
