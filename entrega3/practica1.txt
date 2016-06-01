@@ -1,0 +1,2 @@
+Archivo que especifique el lugar donde fue instalado el backdoor en el servidor web (el backdoor es el script que permite establecer la conexión reversa).
+Explicación de cómo se ejecuta el backdoor instalado en el servidor Web
