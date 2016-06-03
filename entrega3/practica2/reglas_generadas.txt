@@ -1,1 +1,0 @@
-un archivo de texto con la lista de reglas de iptables generadas y una breve explicación de las reglas que definen la política
