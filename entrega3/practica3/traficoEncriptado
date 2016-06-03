@@ -1,1 +1,3 @@
-
+Para confirmar que el tráfico no está viajando como texto plano, se realizaron las siguientes pruebas:
+-Se abre una conexión telnet con 10.0.20.8 al servicio echo y se envían varios mensajes. Capturas de tráfico en el cliente muestran que el tráfico no está cifrado.
+-Se levanta la conexión VPN y se abre una conexión telnet con 172.16.1.1 al servicio echo y se envían mensajes. Capturas en cualquiera de las interfaces físicas del cliente indican que el mensaje no se está transmitiendo como texto plano; capturas en tap0, en cambio, muestran los mensajes. Esto es consistente con la arquitectura de openvpn, ya que los mensajes llegan hasta la interfaz tap desencriptados, viajan entre las interfaces tap del cliente y el servidor encriptados y salen del otro lado desencriptados.
