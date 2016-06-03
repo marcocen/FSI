@@ -1,0 +1,29 @@
+server.conf
+  Se modificaron los siguientes parámetros:
+    ca keys/ca.crt
+    cert keys/VPNServer.crt
+    key keys/VPNServer.key 
+    dh dh1024.pem
+  Para reflejar la ubicación de dichos archivos.
+  Se modificó:
+    server 172.16.1.0 255.255.255.0
+  Para indicar la red que se quiere utilizar internamente.
+  Se modificaron los siguientes:
+    user nobody
+    group nogroup
+  Para disminuir los privilegios del daemon openvpn luego de ejecutado.
+
+client.conf
+  Se modifican
+    ca .openvpn/ca.crt
+    cert .openvpn/20.crt
+    key .openvpn/20.key
+  para indicar la ubicación de los archivos.
+  Se modifica:
+    remote vpnserver.labgsi.local 1194
+  Para indicar ubicación y puerto del servidor al cual me conectaré.
+  Se modificaron:
+    user nobody
+    group nogroup
+  Para bajarle los privilegios al proceso openvpn luego de iniciada la conexión.
+
